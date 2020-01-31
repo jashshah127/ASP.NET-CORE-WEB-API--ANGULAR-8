@@ -1,0 +1,49 @@
+.highlight {
+    background-color:rgb(252, 127, 25);
+  } 
+
+input.ng-touched.ng-invalid{
+    border-color: #f7f307;
+}
+
+input.ng-touched.ng-valid{
+    border-color: #3b28a475;
+}
+
+.green-icon{
+    color: #28a745;
+}
+
+.red-icon{
+    color: #dc3545;
+}
+
+#toastr-container > div {
+    opacity:1;
+}
+
+th {
+    background-color: rgb(8, 7, 7);
+    color: rgb(252, 92, 252);
+  }
+
+tr:nth-child(even) {background-color: #fffb00;}
+tr:nth-child(odd) {background-color: #31bd06;}
+
+tr:nth-child(even) { cursor: pointer;
+    color: #002900f8;}
+
+    tr:nth-child(odd) {cursor: pointer;
+        color: #000741f8;}
+
+table, th, td {
+    border: 1px solid black; 
+  }
+table tr:hover{
+    cursor: pointer;
+    color: #0078aff8;
+}
+tr:hover {
+    background-color: #000000;
+   
+  }

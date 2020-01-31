@@ -1,0 +1,70 @@
+
+<div class>
+    
+        <h3 class="panel-title"></h3>
+        <div class="panel panel-info">
+            <div class="panel-heading">Register or verify your card details here!</div>
+            
+        
+        <span class="label label-warning">Register a New Payment</span>
+        
+        <span class="label label-default">OR</span>
+    
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" >
+    <input type="hidden" name="PMId" [value]="service.formData.PMId">
+   <div> <span class="label label-info">Continue Your Payment</span>
+
+    
+    <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="glyphicon glyphicon-user" style="font-size:12px;color:rgb(255, 166, 0);" [class.green-icon]="CardOwnerName.valid" [class.red-icon]="CardOwnerName.invalid && CardOwnerName.touched"></i>
+                    </div>
+                </div>
+                <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.CardOwnerName" type="text" class="form-comtrol" placeholder="Card Owner Name" required minlength="2">
+            </div>
+    </div> 
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="glyphicon glyphicon-credit-card" style="font-size:12px;color:rgb(255, 230, 0);" [class.green-icon]="CardNumber.valid" [class.red-icon]="CardNumber.invalid && CardNumber.touched"></i>
+                </div>
+            </div>
+            <input name="CardNumber" #CardNumber="ngModel" [(ngModel)]="service.formData.CardNumber" type="text" class="form-comtrol" placeholder="16-digit Card Number" required maxlength="16" minlength="16"> 
+        </div>
+</div>
+<div class= "form-row">
+<div class="form-group col-md-7">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="glyphicon glyphicon-calendar" style="font-size:12px;color:rgb(84, 199, 219);" [class.green-icon]="ExpirationDate.valid" [class.red-icon]="ExpirationDate.invalid && ExpirationDate.touched"></i>
+            </div>
+        </div>
+        <input name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="service.formData.ExpirationDate" type="text" class="form-comtrol" placeholder="MM/YY" required maxlength="5" minlength="5">
+    </div>
+</div>
+
+<div class="form-group col-md-7">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="glyphicon glyphicon-envelope" style="font-size:12px;color:red;" [class.green-icon]="CVVNumber.valid" [class.red-icon]="CVVNumber.invalid && CVVNumber.touched"></i>
+            </div>
+        </div>
+        <input type="password" name="CVVNumber" #CVVNumber="ngModel" [(ngModel)]="service.formData.CVVNumber" class="form-comtrol" placeholder="CVV" required maxlength="3" minlength="3">
+    </div>
+</div>
+</div>
+<div class="form-group col-md-7">
+    <time datetime="YYYY-MM-DDThh:mm:ssTZD"></time>
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+
+ 
+
+</div>
+</div>
+</form>

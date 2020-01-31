@@ -1,0 +1,19 @@
+<form autocomplete="off">
+    <table class="table table-hover"> 
+        <th>CardHolder Name</th>
+        <th>CardNumber</th>
+        <th>ExpirationDate</th>
+        <th>CVV</th>
+        <th>Delete</th>
+        <tr *ngFor="let pd of service.list">
+    <td (click)="populateForm(pd)">{{pd.CardOwnerName}}</td>
+    <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
+    <td (click)="populateForm(pd)">{{pd.ExpirationDate}}</td>
+    <td (click)="populateForm(pd)">{{pd.CVVNumber}}</td>
+    <td>
+        <button style="font-size:10px" (click)="onDelete(pd.PMId)">Delete</button>
+    
+    </td>
+    </tr>
+    </table>
+    </form>
